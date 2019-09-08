@@ -12,15 +12,15 @@
 	fmt.Println(data, err, "=======================")
 ```
 
-- 0. 首先new 一个cache
+- 1. 首先new 一个cache
 
-- 1. 需要实现 Model 接口
+- 2. 需要实现 Model 接口
 >	SqlTemplate() string  返回查询sql 语句模板 
 >	UnmarshalField() Model 对象里面有些字段可能不是db直接查出而是序列号而来 
-- 2. 注册model 
+- 3. 注册model 
 > func (c *Cache) RegisterType(typeName string, m Model) typeName 为类型名称,m 为实现的model(传指针)
 
-- 3. 获取值
+- 4. 获取值
 > func (c *Cache) Get(k string,typeName) (Model, error) typeName 为类型名称 k 为参数
 
 ## 注意
